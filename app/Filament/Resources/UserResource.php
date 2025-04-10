@@ -65,8 +65,6 @@ class UserResource extends Resource
                     ->label('User Role')
                     ->badge()
                     ->searchable(),
-                
-                   
                
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class PatientRecord extends Model
 {
     protected $fillable = [
-        'full_name',
-        'date_of_birth',
+        'name',
+        'birthday',
+        'email',
         'gender',
-        'contact_number',
+        'contactnumber',
         'emergency_contact',
         'temperature',
         'pulse',

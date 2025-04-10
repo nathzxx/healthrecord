@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->date('birthday');
             $table->string('gender');
-            $table->int('contactnumber');
+            $table->string('contactnumber');
             $table->string('emergency_contact');
 
             //vital sign
