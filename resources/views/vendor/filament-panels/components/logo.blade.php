@@ -1,0 +1,1 @@
+<img src="{{asset('images/logo.blade.png')}}" alt="Logo" class="h-10">
