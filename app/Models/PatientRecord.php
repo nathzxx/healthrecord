@@ -28,6 +28,9 @@ class PatientRecord extends Model
         'recommendations',
         'nurse_name',
         'date',
+        'cdss_risk_level',
+        'cdss_recommendations',
+
     ];
 
     protected $casts = [

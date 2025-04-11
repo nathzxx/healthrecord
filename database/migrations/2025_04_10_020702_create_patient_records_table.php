@@ -44,6 +44,9 @@ return new class extends Migration
             $table->string('nurse_name');
             $table->date('date');
 
+            $table->text('cdss_recommendations')->nullable();
+            $table->string('cdss_risk_level')->nullable();
+
             $table->timestamps();
         });
     }
