@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('visitation_logs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('contact');
             $table->string('Reason');
             $table->time('Time');
             $table->string('Date');
-            $table->string('InterventionProvided');
-            $table->string('FollowUps');
+           
+          
             
             $table->timestamps();
         });

@@ -13,9 +13,16 @@ return new class extends Migration
     {
         Schema::create('incident_reports', function (Blueprint $table) {
             $table->id();
+            $table->string('username');
+            $table->string('name_involve');
+            $table->string('contact');
             $table->string('Incident');
             $table->time('Time');
             $table->date('Date');
+            $table->string('IncidentLocation');
+            $table->string('IncidentType');
+            $table->time('IncidentTime');
+            $table->date('IncidentDate');
             $table->timestamps();
         });
     }

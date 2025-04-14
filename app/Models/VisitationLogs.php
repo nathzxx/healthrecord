@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class VisitationLogs extends Model
 {
     protected $fillable = [
+        'name',
+        'contact',
         'Reason',
         'Time',
         'Date',
-        'InterventionProvided',
-        'FollowUps'
+       
+      
     ];
 }

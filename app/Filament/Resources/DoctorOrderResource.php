@@ -24,12 +24,16 @@ class DoctorOrderResource extends Resource
     protected static ?string $model = DoctorOrder::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Medical Administration Record';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Hidden::make('patient_record_id')
+                ->label('Patient Record ID')
                 ->default(request()->get('patient_id'))
                 ->required(),
             
@@ -53,7 +57,7 @@ class DoctorOrderResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('patient_record_id')->searchable(),
+               
                 Tables\Columns\TextColumn::make('patient_name')->searchable(),
                 Tables\Columns\TextColumn::make('doctor_name'),
                 Tables\Columns\TextColumn::make('order'),
