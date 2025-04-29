@@ -39,12 +39,26 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
+
                 Widgets\AccountWidget::class,
+
+
                 Widgets\FilamentInfoWidget::class,
                 
                 \App\Filament\Widgets\UserRoleStats::class,
-                \Filament\Widgets\AccountWidget::class,
-                \Filament\Widgets\FilamentInfoWidget::class,
+                \App\Filament\Widgets\PatientCount::class,
+                
+                
+                
+
+                \App\Filament\Widgets\TemperaturePieChart::class,
+                
+                \App\Filament\Widgets\PbloodPressure::class,
+                \App\Filament\Widgets\PulsePieChart::class,
+                \App\Filament\Widgets\RespiratoryRatePieChart::class,
+              
+               
+                
             ])
             ->middleware([
                 EncryptCookies::class,

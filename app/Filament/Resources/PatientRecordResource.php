@@ -141,7 +141,18 @@ class PatientRecordResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('Create Lab Order')
+                    ->label('Add Lab Order')
+                    ->icon('heroicon-o-plus')
+                    ->color('primary')
+                    ->visible(fn () => Auth::user()?->hasRole('doctor'))
+                    ->url(fn ($record) => route('filament.admin.resources.lab-orders.create', [
+                        'patient_id' => $record->id,
+                        'patient_name' => $record->name,
+                        'doctor_name' => Auth::user()->name,
+                    ])),
+             
+              
                 Tables\Actions\Action::make('Create Doctor Order')
                     ->label('Add Doctor Order')
                     ->icon('heroicon-o-plus')
@@ -152,6 +163,7 @@ class PatientRecordResource extends Resource
                         'patient_name' => $record->name,
                         'doctor_name' => Auth::user()->name,
                     ]))
+                    
                     ->openUrlInNewTab(false),
             ])
             ->bulkActions([
